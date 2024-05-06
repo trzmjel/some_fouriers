@@ -26,3 +26,4 @@ plot(f, widmo);
 title('Widmo częstotliwościowe');
 xlabel('Częstotliwość [Hz]');
 ylabel('Amplituda');
+pause
