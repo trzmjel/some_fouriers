@@ -3,12 +3,13 @@ amplituda = 1;
 czestotliwosc = 73; % Hz
 czas_trwania = 2; % sekundy
 czestotliwosc_probkowania = 500; % Hz
+przesuniecie=3; % sekundy
 
 % Czas sygnału
 t = linspace(0, czas_trwania, czas_trwania * czestotliwosc_probkowania);
 
 % Generowanie sygnału 
-sygnal =  sin(2 * pi * czestotliwosc * t) + sin((2 * pi * czestotliwosc * t)+pi/2);
+sygnal =  sin(2 * pi * czestotliwosc * t) + sin(2 * pi * czestotliwosc * t + 2 * pi * przesuniecie / czestotliwosc);
 
 % Transformaty Fouriera
 widmo = abs(fft(sygnal));

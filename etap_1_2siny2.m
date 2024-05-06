@@ -1,14 +1,14 @@
 % Parametry sygnału
 amplituda = 1;
-czestotliwosc = 1; % Hz
+czestotliwosc = 73; % Hz
 czas_trwania = 2; % sekundy
-czestotliwosc_probkowania = 1000; % Hz
+czestotliwosc_probkowania = 500; % Hz
 
 % Czas sygnału
 t = linspace(0, czas_trwania, czas_trwania * czestotliwosc_probkowania);
 
 % Generowanie sygnału sinusoidalnego
-sygnal = amplituda * sin(2 * pi * czestotliwosc * t);
+sygnal =  sin(2 * pi * czestotliwosc * t) + sin(2 * pi * czestotliwosc * t + 2 * pi * przesuniecie / czestotliwosc);
 
 % Transformaty Fouriera
 widmo = abs(fft(sygnal));
