@@ -12,7 +12,7 @@ czas_trwania = 5; %s
 t = linspace(0, czas_trwania, czas_trwania * czestotliwosc_probkowania);
 
 % Generowanie sygnału sinusoidalnego
-sygnal = A * (t / t1).^n ./ 1+(t/t1).^n .* exp(-t/t2) .* cos(2 * pi * f * t + phi);
+sygnal = A * ((t / t1).^n ./ 1+(t/t1).^n) .* exp(-t/t2) .* cos(2 * pi * f * t + phi);
 
 % Transformaty Fouriera
 widmo = abs(fft(sygnal));
